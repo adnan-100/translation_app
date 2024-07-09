@@ -9,7 +9,7 @@ class languageTranslator extends StatefulWidget {
 }
 
 class _languageTranslatorState extends State<languageTranslator> {
-  var languages =['Hindi','English','Arabic'];
+  var languages =['Hindi','English','Arabic','Urdu','French'];
   var originlanguage= "From";
   var destinationlanguage = "To";
   var output= " ";
@@ -35,6 +35,12 @@ class _languageTranslatorState extends State<languageTranslator> {
     }
     else if(language=="Arabic"){
       return "ar";
+    }
+    else if(language=="Urdu"){
+      return "ur";
+    }
+    else if(language=="French"){
+      return "fr";
     }
     return "==";
   }
@@ -133,13 +139,13 @@ class _languageTranslatorState extends State<languageTranslator> {
               Padding(padding: EdgeInsets.all(8),
                child: ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
-    onPressed: (){
+               onPressed: (){
                  translate(getLanguageCode(originlanguage), getLanguageCode(destinationlanguage), languagecontroller.text.toString());
-    },child: Text("Translate")),
+               },child: Text("Translate")),
            ),
-        SizedBox(height: 20,),
-        Text(
-        "\n$output",
+            SizedBox(height: 20,),
+           Text(
+          "\n$output",
          style: TextStyle(
          color: Colors.white,
          fontWeight: FontWeight.bold,
